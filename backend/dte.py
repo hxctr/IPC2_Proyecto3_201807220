@@ -7,4 +7,3 @@ class DTE():
         self.value = value
         self.iva = iva
         self.total = total
-        

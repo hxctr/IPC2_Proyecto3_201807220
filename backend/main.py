@@ -7,13 +7,11 @@ import sys
 
 manager = Manager()
 
-
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     return "API with Flask is working good"
-
 
 @app.route('/add', methods=['POST'])
 def adding_bill():
@@ -30,23 +28,14 @@ def adding_bill():
             value = str(subelement.find('VALOR').text.strip())
             iva  = str(subelement.find('IVA').text.strip())
             total = str(subelement.find('TOTAL').text.strip())
-        
-            
-            
-            
+
             manager.add_bill(date, reference, sender_nit, receiver_nit, value, iva, total)
-
-    
-    
     return jsonify({'msg':'success!!!!!!!!'}), 200
-
 
 @app.route('/showall', methods=['GET'])
 def get_bills():
     bills = manager.get_bills()
     return jsonify(bills), 200
-
-
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

@@ -10,18 +10,6 @@ def nume(text):
 
 print(nume(text))
 
-# def searchForDate(text):
-#     date = re.search(r"\b\d{1,21}\b", text)
-
-#     if date:
-#         return date.group()
-#     else:
-#         return 'Text doesn´t contain any date'
-
-
-# text = "     7378106       "
-
-# print(searchForDate(text))
 #-----------------------------------------------------------------------------------------------
 # text = "8338817454545566"
 # v_digit = int(text[-1])

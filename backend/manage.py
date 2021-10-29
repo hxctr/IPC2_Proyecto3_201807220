@@ -7,7 +7,7 @@ class Manager(object):
         self.bills = []
     
     def add_bill(self, date, reference, sender_nit, receiver_nit, value, iva, total):#I have to add "reference"
-        
+
         date_response = self.check_date(date)
         reference_response = self.check_reference(reference)
         sender_nit_response = self.check_sender_nit(sender_nit)
@@ -16,8 +16,11 @@ class Manager(object):
         iva_response = self.check_iva(iva, value)
         total_response = self.check_total(value, iva, total)
         
-        new = DTE(date_response, reference_response, sender_nit_response, receiver_nit_response, value_response, iva_response, total_response)
-        self.bills.append(new)
+        if (date_response is not None) and (reference_response is not None) and (sender_nit_response is not None) and (receiver_nit_response is not None) and (value_response is not None) and (iva_response is not None) and (total_response is not None):
+            new = DTE(date_response, reference_response, sender_nit_response, receiver_nit_response, value_response,    iva_response, total_response)
+            self.bills.append(new)
+        else:
+            print('Error in a bill')
         return True
     
     def check_date(self, date):
