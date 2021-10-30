@@ -4,7 +4,84 @@
         <REFERENCIA> A1990 </REFERENCIA>
         <NIT_EMISOR> 7378106 </NIT_EMISOR>
         <NIT_RECEPTOR>
-            45645678
+            8338817
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 20/03/2022 15:25 hrs. </TIEMPO>
+        <REFERENCIA> B4566489 </REFERENCIA>
+        <NIT_EMISOR> 32146787 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            4502647
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 15/01/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 3256845472346 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            818666
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 20/03/2022 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 908991 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            657867
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 15/01/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 477230 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            651664
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 20/03/2022 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 774952 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            948268
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 15/01/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 476536 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            575194
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 02/11/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 966657 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            456020
         </NIT_RECEPTOR>
         <VALOR> 100.00 </VALOR>
         <IVA> 12.00 </IVA>

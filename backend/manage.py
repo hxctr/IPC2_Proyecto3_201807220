@@ -1,6 +1,7 @@
 from dte import DTE
 import sys
 import re
+from xml.dom import minidom
 
 class Manager(object):
     def __init__(self):
@@ -134,7 +135,63 @@ class Manager(object):
                 return None#Total from XML file does not match
         else:
             return None#value_response and iva_response are None
+        
+    def get_authorization(self):
+        sort_by_date = set(k.date for k in self.bills)
+        document = minidom.Document()
+        root = document.createElement("LISTAAUTORIZACIONES")
+        
+        for i in sort_by_date:
+            autorizacion = document.createElement("AUTORIZACION")
+            root.appendChild(autorizacion)
+            # print('---------------',i,'---------------')
+            fecha = document.createElement("FECHA")
+            fecha.appendChild(document.createTextNode(str(i)))
+            autorizacion.appendChild(fecha)
+            
+            listado_autorizaciones = document.createElement("LISTADO_AUTORIZACIONES")
+            autorizacion.appendChild(listado_autorizaciones)
+            for k in self.bills:
+                if k.date == i:
+                    
+                    
+                    aprobacion = document.createElement("APROBACION")
+                    listado_autorizaciones.appendChild(aprobacion)
+                    
+                    nit_emisor = document.createElement("NIT_EMISOR")
+                    nit_emisor.setAttribute("ref", k.reference)
+                    nit_emisor.appendChild(document.createTextNode(k.sender_nit))
+                    aprobacion.appendChild(nit_emisor)
+                    
+                    nit_receptor = document.createElement("NIT_RECEPTOR")
+                    nit_receptor.appendChild(document.createTextNode(k.receiver_nit))
+                    aprobacion.appendChild(nit_receptor)
+                    
+                    valor = document.createElement("VALOR")
+                    valor.appendChild(document.createTextNode(k.value))
+                    aprobacion.appendChild(valor)
+                    
+                    
+                    # print(k.reference)
+                    # print(k.sender_nit)
+                    # print(k.receiver_nit)
+                    # print(k.value)
+                    # print(k.iva)
+                    # print(k.total)
+        xml_str = root.toprettyxml(indent="\t")
+        save_path_file= "autorizaciones.xml"
+        
+        with open(save_path_file, "w") as f:
+            f.write(xml_str)
     
+    def reset_authorization(self):
+        self.bills.clear()
+        xml_str = "<LISTAAUTORIZACIONES> </LISTAAUTORIZACIONES>"
+                
+        save_path_file= "autorizaciones.xml"
+        with open(save_path_file, "w") as f:
+            f.write(xml_str)
+        
     def get_bills(self):
         json_bill = []
         for i in self.bills:

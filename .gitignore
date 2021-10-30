@@ -1,5 +1,5 @@
-backend/__pycache__
-backend/test.py
-backend/test.xml
-backend/.gitignore
-backend/.idea
+/backend/__pycache__
+/backend/test.py
+/backend/test.xml
+/backend/.gitignore
+/backend/.idea
