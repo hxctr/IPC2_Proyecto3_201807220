@@ -179,7 +179,7 @@ class Manager(object):
                     # print(k.iva)
                     # print(k.total)
         xml_str = root.toprettyxml(indent="\t")
-        save_path_file= "autorizaciones.xml"
+        save_path_file= "C:/Users/hctr/Documents/IPC2_Proyecto3_201807220/frontend/web/autorizaciones.xml"
         
         with open(save_path_file, "w") as f:
             f.write(xml_str)
@@ -188,7 +188,7 @@ class Manager(object):
         self.bills.clear()
         xml_str = "<LISTAAUTORIZACIONES> </LISTAAUTORIZACIONES>"
                 
-        save_path_file= "autorizaciones.xml"
+        save_path_file= "C:/Users/hctr/Documents/IPC2_Proyecto3_201807220/frontend/web/autorizaciones.xml"
         with open(save_path_file, "w") as f:
             f.write(xml_str)
         

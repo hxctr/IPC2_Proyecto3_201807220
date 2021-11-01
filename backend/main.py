@@ -30,7 +30,7 @@ def adding_bill():
             total = str(subelement.find('TOTAL').text.strip())
 
             manager.add_bill(date, reference, sender_nit, receiver_nit, value, iva, total)
-    return jsonify({'msg':'Data sent successfully'}), 200
+    return jsonify({'ok': True,'msg':'Data sent successfully'}), 200
 
 @app.route('/send', methods=['GET'])
 def send_data():
@@ -40,7 +40,7 @@ def send_data():
 @app.route('/reset', methods=['GET'])
 def reset_data():
     manager.reset_authorization()
-    return jsonify({'msg':'File successfully reset'}), 200
+    return jsonify({'ok':True,'msg':'File successfully reset'}), 200
 
 
 @app.route('/showall', methods=['GET'])

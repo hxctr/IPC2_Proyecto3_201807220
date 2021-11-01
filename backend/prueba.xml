@@ -1,0 +1,90 @@
+<SOLICITUD_AUTORIZACION>
+    <DTE>
+        <TIEMPO> Guatemala, 15/01/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> A1990 </REFERENCIA>
+        <NIT_EMISOR> 912255 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            767417
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 20/03/2022 15:25 hrs. </TIEMPO>
+        <REFERENCIA> B4566489 </REFERENCIA>
+        <NIT_EMISOR> 514519 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            842575
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 15/01/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 638366 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            936812
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 20/03/2022 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 967165 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            540862
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 15/01/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 909122 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            894486
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 20/03/2022 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 728152 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            592056
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 15/01/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 919195 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            911003
+        </NIT_RECEPTOR>
+        <VALOR> 100.00 </VALOR>
+        <IVA> 12.00 </IVA>
+        <TOTAL> 112.00 </TOTAL>
+    </DTE>
+    <DTE>
+        <TIEMPO> Guatemala, 02/11/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 630187 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            860743
+        </NIT_RECEPTOR>
+        <VALOR> 1500.00 </VALOR>
+        <IVA> 180.00 </IVA>
+        <TOTAL> 1680.00 </TOTAL>
+    </DTE>
+</SOLICITUD_AUTORIZACION>
