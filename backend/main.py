@@ -3,12 +3,15 @@ from manage import Manager
 from flask.json import jsonify
 from xml.etree import ElementTree as ET
 
+from flask_cors import CORS
+
 import sys
 
 manager = Manager()
 
 app = Flask(__name__)
 
+CORS(app)
 @app.route('/')
 def index():
     return "API with Flask is working good"
@@ -46,7 +49,7 @@ def reset_data():
 @app.route('/showall', methods=['GET'])
 def get_bills():
     bills = manager.get_bills()
-    return jsonify(bills), 200
+    return jsonify(bills,{'ok':True}), 200
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

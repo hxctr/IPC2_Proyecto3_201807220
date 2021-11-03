@@ -142,6 +142,7 @@ class Manager(object):
         root = document.createElement("LISTAAUTORIZACIONES")
         
         for i in sort_by_date:
+            references =  []
             autorizacion = document.createElement("AUTORIZACION")
             root.appendChild(autorizacion)
             # print('---------------',i,'---------------')
@@ -149,11 +150,19 @@ class Manager(object):
             fecha.appendChild(document.createTextNode(str(i)))
             autorizacion.appendChild(fecha)
             
+            errores = document.createElement("ERRORES") 
+            autorizacion.appendChild(errores)
+                    
             listado_autorizaciones = document.createElement("LISTADO_AUTORIZACIONES")
             autorizacion.appendChild(listado_autorizaciones)
+            
+            counter = 0
+            duplicate_reference = ''
             for k in self.bills:
+                if k.reference in references:
+                    duplicate_reference = k.reference
+                counter += 1
                 if k.date == i:
-                    
                     
                     aprobacion = document.createElement("APROBACION")
                     listado_autorizaciones.appendChild(aprobacion)
@@ -170,7 +179,12 @@ class Manager(object):
                     valor = document.createElement("VALOR")
                     valor.appendChild(document.createTextNode(k.value))
                     aprobacion.appendChild(valor)
+                    references.append(k.reference)
                     
+                if counter == len(self.bills):
+                        referencia_duplicada = document.createElement("REFERENCIA_DUPLICADA")
+                        referencia_duplicada.appendChild(document.createTextNode(str(references.count(duplicate_reference))))
+                        errores.appendChild(referencia_duplicada)
                     
                     # print(k.reference)
                     # print(k.sender_nit)
@@ -178,6 +192,7 @@ class Manager(object):
                     # print(k.value)
                     # print(k.iva)
                     # print(k.total)
+            references =  []
         xml_str = root.toprettyxml(indent="\t")
         save_path_file= "C:/Users/hctr/Documents/IPC2_Proyecto3_201807220/frontend/web/autorizaciones.xml"
         

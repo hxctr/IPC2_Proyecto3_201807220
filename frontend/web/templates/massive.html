@@ -4,22 +4,42 @@
     <h1 style="text-align: center;"> Carga Masiva </h1>
 </div>
 <div class="container py-2">
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-<label for="file">Cargar un archivo</label>
-<br>
-<input type="file" id="file" name="file" accept="text/xml">
-<div class="container py-3">
-    {% if content %}   
-        <textarea label="textarea" name="textarea" rows="20" cols="70">{{content}}</textarea>
-        <textarea label="textarea" name="textarea2" rows="20" cols="70">{{response}}</textarea>
-    {% else %}
-        <textarea style="margin-right: 1rem;" label="textarea" name="textarea" rows="20" cols="70"></textarea>
-        <textarea label="textarea" name="textarea2" rows="20" cols="70"></textarea>
-    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file">Cargar un archivo</label>
+        <br>
+        <input type="file" id="file" name="file" accept="text/xml">
+        <div class="container py-3">
+            {% if content %}
+            <textarea label="textarea" name="textarea" rows="20" cols="70">{{content}}</textarea>
+            <textarea label="textarea" name="textarea2" rows="20" cols="70">{{response}}</textarea>
+            {% else %}
+            <textarea style="margin-right: 1rem;" label="textarea" name="textarea" rows="20" cols="70"></textarea>
+            <textarea label="textarea" name="textarea2" rows="20" cols="70"></textarea>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-success btn-lg" action="/load/">Enviar</button>
+    </form>
+    <form>
+        <button id="btn_reset" type="submit" class="btn btn-danger btn-lg" onclick="limpiar()">Reset</button>
+    </form>
 </div>
-<button type="submit" class="btn btn-success btn-lg" action="/load/">Enviar</button>
-<button type="submit" class="btn btn-danger btn-lg" action="/clean/">Reset</button>
-</form>
-</div>
+<script>
+    function limpiar() {
+        fetch('http://127.0.0.1:5000/reset')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.ok)
+                if (data.ok = true) {
+                    console.log('aqui si');
+                } else {
+                    console.log('aqui no');
+
+                }
+
+            });
+    }
+
+
+</script>
 {% endblock content %}

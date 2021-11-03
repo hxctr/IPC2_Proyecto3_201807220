@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="invoice">
+    <div class="container py-2">
+        <h1 style="text-align: center;"> Mostrar resultados </h1>
+    </div>
+    <div class="container py-2">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br>
+            <div class="container py-3">
+                {% if content %}
+                <div>{{response}}</div>
+                {% else %}
+                <textarea label="textarea" name="textarea2" rows="20" cols="70"></textarea>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-success btn-lg" action="/show/">Mostrar datos</button>
+        </form>
+
+
+
+
+        <button onclick="generate_pdf()" class="btn btn-primary btn-lg">Generar reporte en PDF</button>
+
+    </div>
+</div>
+<script>
+function generate_pdf() {
+    const element = document.getElementById("invoice");
+    html2pdf()
+    .from(element)
+    .save();
+}
+</script>
+
+
+
+
+<!-- {% load static %}
+<script src="{% static 'html2pdf.bundle.min.js' %} "></script>
+<script src="{% static 'topdf.js' %} "></script> -->
+
+
+
+{% endblock content %}

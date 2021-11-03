@@ -12,8 +12,8 @@ import random
 # print(nume(text))
 
 #-----------------------------------------------------------------------------------------------
-number_random = random.randint(450000, 1000000)
-text = str(number_random)
+# number_random = random.randint(450000, 1000000)
+text = str(7378106)
 v_digit = int(text[-1])
 number = str(text[:-1])
 
@@ -32,9 +32,9 @@ k = minus_operation % 11
 
 if (k < 10) and (k == v_digit):
     
-    print("yes, nit is valide", number_random)
+    print("yes, nit is valide", text)
 else:
-    print("no, nit is valide", number_random)
+    print("no, nit is valide", text)
 #------------------------------------------------------------------------------------
 # text = "Number is  23.12345"
 # result = re.search(r"\b\d{1,3}\.\d{4}\b", text)

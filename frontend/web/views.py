@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import FileForm
 import requests
 from xml.etree import ElementTree as ET
+from django.http import FileResponse
 # Create your views here.
 
 endpoint = 'http://127.0.0.1:5000/'
@@ -42,6 +43,30 @@ def massive_load(request):
         return render(request, 'massive.html')
     return render(request, 'massive.html', ctx)
 
+
+def show_data(request):
+    tree = ET.parse('C:/Users/hctr/Documents/IPC2_Proyecto3_201807220/frontend/web/autorizaciones.xml')
+    tree = tree.getroot()
+    xml_response = ET.tostring(tree, encoding='unicode', method='xml')
+    
+    ctx = {
+        'content': 'dsfasf',
+        'response': xml_response
+    }
+    
+    return render(request, 'data.html', ctx)
+
+def get_info(request):
+    return render(request, 'info.html')
+
+
+def documentation(request):
+    path_file = 'C:/Users/hctr/Documents/IPC2_Proyecto3_201807220/Documentacion/Ensayo.pdf'
+    
+    response = FileResponse(open(path_file, 'rb'), content_type = 'application/pdf')
+    
+    return response
+    
 def reset_load(request):
     ctx = {
         'content': None,
