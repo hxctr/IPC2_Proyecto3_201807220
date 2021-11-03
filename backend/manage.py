@@ -2,6 +2,7 @@ from dte import DTE
 import sys
 import re
 from xml.dom import minidom
+import datetime
 
 class Manager(object):
     def __init__(self):
@@ -25,9 +26,16 @@ class Manager(object):
         return True
     
     def check_date(self, date):
-        result = re.search(r"([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})", date)
+        result = re.search(r"\b\d{2}/\d{2}/\d{4}\b", date)
         if result:
-            return result.group()
+            date_result = result.group()
+            day, month, year = date_result.split("/")
+            
+            try:
+                date_test = datetime.datetime(int(year), int(month), int(day))
+                return date_result
+            except Exception as e:
+                return None#Date is not valid
         else:
             return None#Date from XML file does not match
     
@@ -162,6 +170,7 @@ class Manager(object):
                 if k.reference in references:
                     duplicate_reference = k.reference
                 counter += 1
+                
                 if k.date == i:
                     
                     aprobacion = document.createElement("APROBACION")
@@ -171,6 +180,13 @@ class Manager(object):
                     nit_emisor.setAttribute("ref", k.reference)
                     nit_emisor.appendChild(document.createTextNode(k.sender_nit))
                     aprobacion.appendChild(nit_emisor)
+                    
+                    split_date = k.date.split("/")
+                    
+                    codigo_aprobacion = document.createElement("CODIGO_APROBACION")
+                    codigo_aprobacion.appendChild(document.createTextNode(split_date[2]+split_date[1]+split_date[0]))
+                    aprobacion.appendChild(codigo_aprobacion)
+                    
                     
                     nit_receptor = document.createElement("NIT_RECEPTOR")
                     nit_receptor.appendChild(document.createTextNode(k.receiver_nit))
