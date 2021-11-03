@@ -61,7 +61,7 @@ def get_info(request):
 
 
 def documentation(request):
-    path_file = 'C:/Users/hctr/Documents/IPC2_Proyecto3_201807220/Documentacion/Ensayo.pdf'
+    path_file = '../Documentacion/Ensayo.pdf'
     
     response = FileResponse(open(path_file, 'rb'), content_type = 'application/pdf')
     
