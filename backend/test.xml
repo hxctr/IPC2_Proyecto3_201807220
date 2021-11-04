@@ -87,4 +87,53 @@
         <IVA> 12.00 </IVA>
         <TOTAL> 112.00 </TOTAL>
     </DTE>
+
+    <DTE>
+        <TIEMPO> Guatemala, 02/11/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 630187 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            860743
+        </NIT_RECEPTOR>
+        <VALOR> 145652.5135379 </VALOR>
+        <IVA> 17478.3012 </IVA>
+        <TOTAL> 163130.81 </TOTAL>
+    </DTE>
+    
+    <DTE>
+        <TIEMPO> Guatemala, 02/11/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 630187 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            860743
+        </NIT_RECEPTOR>
+        <VALOR> 145652.5135379 </VALOR>
+        <IVA> 17478.30162 </IVA>
+        <TOTAL> 163130.8152 </TOTAL>
+    </DTE>
+
+
+    <DTE>
+        <TIEMPO> Guatemala, 02/11/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 630187 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            860743
+        </NIT_RECEPTOR>
+        <VALOR> 565468.465123 </VALOR>
+        <IVA> 67856.21581 </IVA>
+        <TOTAL> 633324.6809 </TOTAL>
+    </DTE>
+    
+    <DTE>
+        <TIEMPO> Guatemala, 02/11/2021 15:25 hrs. </TIEMPO>
+        <REFERENCIA> H77814648 </REFERENCIA>
+        <NIT_EMISOR> 630187 </NIT_EMISOR>
+        <NIT_RECEPTOR>
+            860743
+        </NIT_RECEPTOR>
+        <VALOR> 565468.465123 </VALOR>
+        <IVA> 67856.2152 </IVA>
+        <TOTAL> 633324.67 </TOTAL>
+    </DTE>
 </SOLICITUD_AUTORIZACION>

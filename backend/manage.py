@@ -94,9 +94,12 @@ class Manager(object):
             return None#IVA from XML file does not match
     
     def check_value(self, value):
-        result = re.search(r"\b\d{1,8}\.\d{2}\b", value)
+        result = re.search(r"\b\d{1,8}\.\d{2,}", value)
         if result:
-            return result.group()
+            digits, decimals = result.group().split(".")
+            truncate_number = digits +'.'+decimals[0]+decimals[1]
+            return truncate_number
+            # return result.group()
         else:
             return None#Value from XML file does not match
     
@@ -108,9 +111,15 @@ class Manager(object):
             
             value_response = float(self.check_value(value))
             
-            result = re.search(r"\b\d{1,7}\.\d{2}\b", iva)
+            result = re.search(r"\b\d{1,7}\.\d{2,}", iva)
             if result:
-                valid_iva = float(result.group())
+                
+                digits, decimals = result.group().split(".")
+                truncate_iva = digits +'.'+decimals[0]+decimals[1]
+            
+                # valid_iva = float(result.group())
+                valid_iva = float(truncate_iva)
+                
                 iva_operation = round(value_response * 0.12, 2)
                 
                 if valid_iva == iva_operation:
@@ -120,6 +129,7 @@ class Manager(object):
             else:
                 return None#IVA from xml file does not match
         else:
+            print('La cadena no contiene ninguna IVA valido')
             return None#'Value is None'
     
     def check_total(self,value, iva, total):
@@ -127,12 +137,18 @@ class Manager(object):
         iva_response = self.check_iva(iva, value)
         
         if (value_response is not None) and (iva_response is not None):
-            result = re.search(r"\b\d{1,7}\.\d{2}\b", total)
+            result = re.search(r"\b\d{1,7}\.\d{2,}", total)
             
             value_response = float(self.check_value(value))
             iva_response = float(self.check_iva(iva, value))
             if result:
-                valid_total = float(result.group())
+                
+                digits, decimals = result.group().split(".")
+                truncate_total = digits +'.'+decimals[0]+decimals[1]
+
+                
+                # valid_total = float(result.group())
+                valid_total = float(truncate_total)
                 total_operation = float(value_response + iva_response)
                 
                 if valid_total == total_operation:
